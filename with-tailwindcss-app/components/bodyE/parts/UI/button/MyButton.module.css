@@ -1,0 +1,14 @@
+.myBtn{
+    padding: 5px 15px;
+    color:black;
+    font-size: 14px;
+    border: 2px solid darkslategrey;
+    cursor: pointer;
+    border-radius: 12px;
+
+}
+.myBtn:hover{
+    background: lightslategray;
+    color: white;
+
+}
