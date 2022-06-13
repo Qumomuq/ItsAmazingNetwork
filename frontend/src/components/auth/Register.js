@@ -6,17 +6,14 @@ import { register } from "../../actions/auth";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    password2: ""
+
   });
 
   const dispatch = useDispatch();
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
-  const { name, email, password, password2 } = formData;
-
+  const { username,password, email,password2} = formData;
+// , first_name, last_name, phone
   const onChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -26,7 +23,7 @@ const Register = () => {
     if (password !== password2) {
       dispatch(setAlert("Passwords do not match", "danger"));
     } else {
-      dispatch(register({ name, email, password }));
+      dispatch(register({ username,password, email }));
     }
   };
 
@@ -47,9 +44,19 @@ const Register = () => {
             type="text"
             placeholder="Name"
             name="name"
-            value={name}
+            value={username}
             onChange={onChange}
             required
+          />
+        </div>
+        <div className="form-group">
+          <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              minLength="6"
+              value={password}
+              onChange={onChange}
           />
         </div>
         <div className="form-group">
@@ -65,24 +72,44 @@ const Register = () => {
             Gravatar email
           </small>
         </div>
+        {/*<div className="form-group">*/}
+        {/*  <input*/}
+        {/*      type="text"*/}
+        {/*      placeholder="Name"*/}
+        {/*      name="name"*/}
+        {/*      value={first_name}*/}
+        {/*      onChange={onChange}*/}
+        {/*      required*/}
+        {/*  />*/}
+      {/*  </div><div className="form-group">*/}
+      {/*  <input*/}
+      {/*      type="text"*/}
+      {/*      placeholder="Name"*/}
+      {/*      name="name"*/}
+      {/*      value={last_name}*/}
+      {/*      onChange={onChange}*/}
+      {/*      required*/}
+      {/*  />*/}
+      {/*</div>*/}
+
+        {/*<div className="form-group">*/}
+        {/*  <input*/}
+        {/*    type="password"*/}
+        {/*    placeholder="Confirm Password"*/}
+        {/*    name="password2"*/}
+        {/*    minLength="6"*/}
+        {/*    value={phone}*/}
+        {/*    onChange={onChange}*/}
+        {/*  />*/}
+        {/*</div>*/}
         <div className="form-group">
           <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            minLength="6"
-            value={password}
-            onChange={onChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            name="password2"
-            minLength="6"
-            value={password2}
-            onChange={onChange}
+              type="password"
+              placeholder="Confirm Password"
+              name="password2"
+              minLength="6"
+              value={password2}
+              onChange={onChange}
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />

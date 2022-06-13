@@ -18,7 +18,7 @@ export const loadUser = () => async dispatch => {
     setAuthToken(localStorage.token);
   }
   try {
-    const res = await axios.get("/api/auth");
+    const res = await axios.get("http://127.0.0.1:8000/accounts/users/");
 
     dispatch({ type: USER_LOADED, payload: res.data });
   } catch (err) {
@@ -27,15 +27,15 @@ export const loadUser = () => async dispatch => {
 };
 
 // Register User
-export const register = ({ name, email, password }) => async dispatch => {
+export const register = ({ username, password,email, first_name,last_name,phone }) => async dispatch => {
   const config = {
     headers: { "Content-Type": "application/json" }
   };
 
-  const body = JSON.stringify({ name, email, password });
+  const body = JSON.stringify({ username, password,email, first_name,last_name,phone });
 
   try {
-    const res = await axios.post("/api/users", body, config);
+    const res = await axios.post("http://127.0.0.1:8000/accounts/users/", body, config);
 
     dispatch({
       type: REGISTER_SUCCESS,
@@ -79,7 +79,7 @@ export const login = (email, password) => async dispatch => {
   const body = JSON.stringify({ email, password });
 
   try {
-    const res = await axios.post("/api/auth", body, config);
+    const res = await axios.post("http://127.0.0.1:8000/accounts/users/", body, config);
 
     dispatch({
       type: LOGIN_SUCCESS,
@@ -89,6 +89,7 @@ export const login = (email, password) => async dispatch => {
     dispatch(loadUser());
   } catch (err) {
     const error = err.response.data.error;
+
 
     dispatch(setAlert(error, "danger"));
 
