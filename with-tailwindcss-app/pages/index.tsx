@@ -1,19 +1,6 @@
-import Navbar from "../components/navbar/Navbar.jsx";
-import BodyE from "../components/bodyE/BodyE";
 import withAuth from "../components/private/PrivateRoot";
-import {useMobileMenuState} from "../components/dashboard/useMobileMenuState";
-import { Flex, HStack, useColorModeValue as mode } from '@chakra-ui/react'
-import {MobileHamburgerMenu} from "../components/dashboard/MobileHamburgerMenu";
-import {NavMenu} from "../components/dashboard/NavMenu";
-import {Logo} from "../components/dashboard/Logo";
-import {Notification} from "../components/dashboard/Notification";
-import {ProfileDropdown} from "../components/dashboard/ProfileDropdown";
-import {PageHeader} from "../components/dashboard/PageHeader";
-import {PageContent} from "../components/dashboard/PageContent";
 import * as React from "react";
 import {useEffect, useState} from "react";
-import {useActions} from "../hooks/useActions";
-import {useTypedSelector} from "../hooks/useTypedSelector";
 import Modal from "../components/ModalWindow/Modal"
 
 function Index() {
@@ -40,43 +27,4 @@ function Index() {
         </>
     )
 }
-//     const { isMenuOpen, toggle } = useMobileMenuState()
-//
-//
-//     const licenses = useTypedSelector(state => state.licenses)
-//     const {getLicensesData} = useActions()
-//     useEffect(() => {
-//         getLicensesData()
-//     }, [])
-//
-//     return (<>
-//             <Flex direction="column" bg={mode('gray.100', 'gray.800')} height="100vh">
-//                 <Flex align="center" bg="blue.600" color="white" px="6" minH="16">
-//                     <Flex justify="space-between" align="center" w="full">
-//                         <MobileHamburgerMenu onClick={toggle} isOpen={isMenuOpen} />
-//                         <NavMenu.Mobile />
-//
-//                         {/* Desktop Logo placement */}
-//                         <Logo display={{ base: 'none', lg: 'block' }} flexShrink={0} h="5" marginEnd="10" />
-//
-//                         {/* Desktop Navigation Menu */}
-//                         <NavMenu.Desktop />
-//
-//                         {/* Mobile Logo placement */}
-//                         <Logo flex={{ base: '1', lg: '0' }} display={{ lg: 'none' }} flexShrink={0} h="5" />
-//
-//                         <HStack spacing="3">
-//                             <Notification display={{ base: 'none', lg: 'inline-flex' }} />
-//                             <ProfileDropdown />
-//                         </HStack>
-//                     </Flex>
-//                 </Flex>
-//
-//                 <PageHeader  />
-//                 {!licenses.loading && <PageContent />}
-//             </Flex>
-//
-//         </>
-//     )
-// }
 export default withAuth(Index)

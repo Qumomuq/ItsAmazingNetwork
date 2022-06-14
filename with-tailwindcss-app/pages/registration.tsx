@@ -75,13 +75,7 @@ function registrationPage() {
                                                                                                        className="text-indigo-600 underline">sign
                                 in</a></p>
                             <div  className="relative w-full mt-10 space-y-8">
-                                <div className="relative">
-                                    <label className="font-medium text-gray-900">Name</label>
-                                    <input type="text"
-                                           className="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 focus:outline-none focus:ring-4 focus:ring-indigo-600 focus:ring-opacity-50 rounded-full"
-                                           placeholder="Enter Your Name"/>
-                                    {/*// onChange={(e) => setEmail(e.target.value)} value={email} />*/}
-                                </div>
+
                                 <div className="relative">
                                     <label className="font-medium text-gray-900">Username</label>
                                     <input type="text"

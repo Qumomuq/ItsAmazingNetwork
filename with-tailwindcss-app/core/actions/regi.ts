@@ -1,4 +1,4 @@
-import {UserAction, UserActionTypes} from "../../types/user";
+
 import {Dispatch} from "redux";
 import axios, {AxiosError, AxiosResponse} from "axios";
 import {wrapUrl} from "../../helpers/urlWrapper";
