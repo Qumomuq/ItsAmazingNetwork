@@ -1,10 +1,9 @@
-import {UserAction, UserActionTypes} from "../../types/user";
+
 import {Dispatch} from "redux";
 import axios, {AxiosError, AxiosResponse} from "axios";
 import {wrapUrl} from "../../helpers/urlWrapper";
 import {apiUrl} from "../../config";
 import {authHeader, setAuthToken} from "../../helpers/AuthHelper";
-import {License, LicenseActionTypes, LicensesAction} from "../../types/licenses";
 import {ErrorBackend} from "../../components/interfaces/basicObjects";
 import {Auth, TokenAction, TokenActionTypes} from "../../types/auth";
 import {number} from "prop-types";

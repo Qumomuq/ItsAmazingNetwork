@@ -9,7 +9,7 @@ export default function withAuth(WrappedComponent: any) {
         useEffect(() => {
             const user = useUser()
             if (!user) {
-                router.replace('/login')
+                router.replace('/firstpage')
             }
         }, [])
         return <WrappedComponent {...props} />

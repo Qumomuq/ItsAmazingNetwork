@@ -1,3 +1,4 @@
+import {router} from "next/client";
 
 
 export function authHeader() {
@@ -5,9 +6,9 @@ export function authHeader() {
     let user = localStorage.getItem('token');
 
     if (user) {
-        return { 'Authorization': 'Bearer ' + user };
+        return {'Authorization': 'Bearer ' + user};
     } else {
-        return { 'Authorization': ''};
+        return {'Authorization': ''};
     }
 }
 

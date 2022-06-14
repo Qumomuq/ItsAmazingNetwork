@@ -1,5 +1,7 @@
 // import Index from 'next/app'
 import '../styles/globals.css'
+//import '../styles/stylesMain.css'
+import '../styles/regpage.css'
 import '../components/ModalWindow/modal.css'
 import { Provider } from 'react-redux'
 import { useStore } from '../core/store'

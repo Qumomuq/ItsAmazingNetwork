@@ -24,8 +24,6 @@ function registrationPage() {
         }
     }, [])
 
-    const {getAuthUser} = useActions()
-    const reg = useTypedSelector(state => state.reg)
     const {getRegUser} = useActions()
 
 
@@ -45,7 +43,6 @@ function registrationPage() {
     }
 
     return (
-        <>
         displayAuthForm &&
         <section className="w-full bg-white ">
             <div className="mx-auto max-w-8xl">
@@ -141,10 +138,6 @@ function registrationPage() {
             </div>
 
         </section>
-            <style>
-
-            </style>
-        </>
     )
 };
 
